@@ -1,3 +1,3 @@
-const sass = require('sass');
+// const sass = require('sass');
 
-const result = sass.compile(scssFilename);
+// const result = sass.compile(scssFilename);
