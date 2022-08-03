@@ -1,0 +1,301 @@
+//Form input styling
+$component-active-bg: rgba(235, 123, 89, 1);
+
+//Custom navbar variables
+$navbar-dark-color: rgba(229, 221, 203, 1);
+$navbar-dark-hover-color: rgba(167, 197, 189, 1);
+$navbar-dark-active-color: rgba(167, 197, 189, 1);
+
+//Navbar hide
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+
+//Navbar font
+.navbar-dark .navbar-nav .nav-link {
+    font-family: "Montserrat";
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+//Animate menu
+.menu-animation {
+    display: inline-block;
+    position: relative;
+    color: rgba(167, 197, 189, 1);
+  }
+
+.menu-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(167, 197, 189, 1);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+.menu-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+@media screen and (max-width: 992px) {
+    .menu-animation {
+    display: none
+    }
+    .menu-animation:after {
+        display: none
+        }
+    .menu-animation:hover:after {
+        display: none
+        }
+    }
+
+//Remove border from toggler
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+//Lines of the toggler
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: rgba(207, 70, 71, 1);
+    display: block;
+    transition: all 0.2s ease-in-out;
+}
+
+//Adds Space between the lines
+.middle-bar{
+    margin: 5px auto;
+}
+
+//State when navbar is opened (START)
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+//State when navbar is opened (END)
+
+//State when navbar is collapsed (START)
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+//State when navbar is collapsed (END)
+
+//Color of toggler when collapsed
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: rgba(229, 221, 203, 1);
+}
+
+//Import the functions & variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+//Custom theme colors
+$custom-colors: (
+"moon": rgba(82, 70, 86, 1),
+"earth": rgba(167, 197, 189, 1),
+"cloud": rgba(229, 221, 203, 1),
+"thruster": rgba(235, 123, 89, 1),
+"mars": rgba(207, 70, 71, 1),
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$body-bg: rgba(82, 70, 86, 1);
+$body-color: rgba(167, 197, 189, 1);
+
+//Links
+$link-color: var(--bs-thruster);
+$link-hover-decoration: none;
+$link-hover-color: var(--bs-mars);
+
+.body-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: rgba(235, 123, 89, 1);
+  }
+
+.body-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(207, 70, 71, 1);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+.body-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+//Custom Skills List
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    display: block;
+    background-image: url("../assets/check-circle-fill.svg");
+    background-repeat: no-repeat;
+    background-position-y: .28em;
+    background-position-x: 0em;
+    height: 2em;
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+//import the Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,900;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+//Default Sans Serif
+$font-family-sans-serif: "Roboto", "Helvetica", "Arial", "sans-serif";
+
+//Headers
+$headings-font-family: "Montserrat", sans-serif;
+$headings-font-weight: 900;
+$headings-color: var(--bs-earth);
+
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 4;
+
+h1 {
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 900;
+    display:inline-block;
+    font-style: italic;
+    text-transform: uppercase;
+    transform: rotate(-12deg);
+    margin: 0;
+    padding-top: .6em;
+    padding-bottom: .6em;
+    color: rgba(167, 197, 189, 1);
+    text-shadow: .6vmin .6vmin 0 rgba(235, 123, 89, 1), -.6vmin -.6vmin 0 rgba(207, 70, 71, 1);
+}
+
+h2 {
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 900;
+    display:inline-block;
+    font-style: italic;
+    text-transform: uppercase;
+    transform: rotate(-12deg);
+    margin: 0;
+    padding-top: .6em;
+    padding-bottom: .6em;
+    color: rgba(167, 197, 189, 1);
+    text-shadow: .6vmin .6vmin 0 rgba(235, 123, 89, 1), -.6vmin -.6vmin 0 rgba(207, 70, 71, 1);
+}
+
+h3 { 
+    text-transform: uppercase;
+}
+
+h4 { 
+    text-transform: uppercase;
+}
+
+h5 { 
+    text-transform: uppercase;
+}
+
+h6 {
+    text-transform: uppercase;
+}
+
+//Body Wrap
+.wrapper {
+min-height:100vh;
+background-color: var(--bs-moon);
+}
+
+//Footer
+footer {
+    height: 8em;
+    background-color: var(--bs-earth);
+    display:flex;
+    align-items:center;
+}
+
+//Animate social media
+.social {
+    display: inline-block;
+    transform: scale(1);
+}
+
+.social:hover {
+    transform: scale(1.2);
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+    .social:hover {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+        transform: none;
+    }
+}
+
+//Media query footer
+@media screen and (max-width: 151px) {
+    .social {
+    display: none
+    }
+}
+
+@media screen and (max-width: 99px) {
+    .copyright {
+    display: none
+    }
+}
+
+//Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap"; 
